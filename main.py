@@ -1,4 +1,4 @@
-from treeSearch import treeSearch
+from searchAlgorithms import hybridSearch
 from Logger import Logger
 
 logger = Logger()
@@ -16,6 +16,6 @@ goal = get_user_input()
 
 logger.log(f"user input(goal): {goal}")
 
-print(treeSearch([goal]))
+print(hybridSearch([goal]))
 
 logger.log("run ended.")

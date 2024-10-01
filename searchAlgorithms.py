@@ -10,10 +10,24 @@ def treeSearch(Goals:List[int]) -> str:
     while len(frontier) > 0:
         logger.log(f"frontier:{frontier}")
         L = frontier.pop(0)
-        
         for expandedNode in [math.floor(L.state), math.sqrt(L.state), L.state * 2]:
             if expandedNode in Goals:
                 return f"{L}, {expandedNode}"
             if not expandedNode in [1, 2, 4, L.state]:
+                frontier.append(Node(expandedNode, L))
+    return "No path found to the Goal"
+
+def hybridSearch(Goals:List[int]) -> str:
+    frontier:List['Node'] = [Node(4.0, None)]
+    explored:List[int] = []
+    while len(frontier) > 0:
+        logger.log(f"frontier:{frontier}")
+        L = frontier.pop(0)
+        if L.state == int(L.state):
+            explored.append(L.state)
+        for expandedNode in [math.floor(L.state), math.sqrt(L.state), L.state * 2]:
+            if expandedNode in Goals:
+                return f"{L}, {expandedNode}"
+            if not expandedNode in explored:
                 frontier.append(Node(expandedNode, L))
     return "No path found to the Goal"
