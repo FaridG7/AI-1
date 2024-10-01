@@ -1,4 +1,4 @@
-from searchAlgorithms import BFShybridSearch
+from searchAlgorithms import BFSgraphSearch
 from Logger import Logger
 
 logger = Logger()
@@ -14,8 +14,8 @@ def get_user_input() -> int:
 
 goal = get_user_input()
 
-logger.log(f"user input(goal): {goal}")
+# logger.log(f"user input(goal): {goal}")
 
-print(BFShybridSearch(goal))
+print(BFSgraphSearch(goal))
 
-logger.log("run ended.")
+# logger.log("run ended.")
