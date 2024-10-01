@@ -10,6 +10,6 @@ class Node:
             return str(self.state)
     def __str__(self) -> str:
         if self.parent:
-            return f"{self.parent}, {self.state}"
+            return f"{self.parent} => {self.state}"
         else:
             return str(self.state)

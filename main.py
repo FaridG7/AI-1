@@ -1,4 +1,4 @@
-from searchAlgorithms import hybridSearch
+from searchAlgorithms import BFShybridSearch
 from Logger import Logger
 
 logger = Logger()
@@ -16,6 +16,6 @@ goal = get_user_input()
 
 logger.log(f"user input(goal): {goal}")
 
-print(hybridSearch([goal]))
+print(BFShybridSearch(goal))
 
 logger.log("run ended.")
