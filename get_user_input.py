@@ -1,7 +1,6 @@
 from searchAlgorithms import BFSgraphSearch
-from Logger import Logger
+from uselessFiles.Logger import Logger
 
-logger = Logger()
 
 def get_user_input() -> int:
     while True:
@@ -11,11 +10,3 @@ def get_user_input() -> int:
             return user_input
         except ValueError:
             print("That is not a valid integer. Please try again.")
-
-goal = get_user_input()
-
-# logger.log(f"user input(goal): {goal}")
-
-print(BFSgraphSearch(goal))
-
-# logger.log("run ended.")
